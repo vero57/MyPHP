@@ -29,7 +29,20 @@ class Product {
     public static $products = array("Buku" => 20000, "Pensil" => 1000, "Pulpen" => 3000, "Penghapus" => 500);
     
     public static function add_product($nama, $harga) {
-        Product::$products[$nama] = $harga;
+        Product::$products->$nama = $harga;
     }
 }
+
+class Products {
+    public $Buku = 20000;
+    public $Pensil = 1000;
+    public $Pulpen = 3000;
+    public $Penghapus = 500;
+}
+
+Product::$products = new Products();
+
+Product::add_product("Penggaris", 1500);
+print_r(Product::$products);
+
 ?>
