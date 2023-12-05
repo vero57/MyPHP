@@ -25,9 +25,35 @@ class Bidang_Datar {
     }
 }
 
+$panjang = 5;
+$lebar = 10;
+echo "Panjang : " . $panjang. "\n";
+echo "Lebar : " . $lebar. "\n";
+echo "Luas persegi panjang: " . Bidang_Datar::luas_persegi_panjang($panjang, $lebar) . "\n";
+echo "Keliling persegi panjang: " . Bidang_Datar::keliling_persegi_panjang($panjang, $lebar) . "\n";
+
+echo "\n";
+$jari_jari = 66;
+echo "Jari-jari : " . $jari_jari. "\n";
+echo "Luas Lingkaran: " . Bidang_Datar::luas_lingkaran($jari_jari) . "\n";
+echo "Keliling Lingkaran: " . Bidang_Datar::keliling_lingkaran($jari_jari) . "\n";
+echo "\n";
+
+$alas = 16;
+$tinggi = 22;
+$sisi_a = 10;
+$sisi_b = 20;
+$sisi_c = 30;
+echo "Alas : " . $alas. "\n";
+echo "Tinggi : " . $tinggi. "\n";
+echo "sisi : " . $sisi_a. ", " .$sisi_b. ", ".$sisi_c ."\n";
+echo "Luas segitiga: " . Bidang_Datar::luas_persegi_panjang($panjang, $lebar) . "\n";
+echo "Keliling segitiga: " . Bidang_Datar::keliling_persegi_panjang($sisi_a, $sisi_b, $sisi_c) . "\n";
+echo "\n";
+echo "\n";
 class Product {
-    public static $products = array("Buku" => 20000, "Pensil" => 1000, "Pulpen" => 3000, "Penghapus" => 500);
-    
+    public static $products;
+
     public static function add_product($nama, $harga) {
         Product::$products->$nama = $harga;
     }
