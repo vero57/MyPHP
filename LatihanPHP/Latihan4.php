@@ -33,19 +33,30 @@ class Planet extends Galaxy {
     }
 }
 
-// 3. Objek Bumi, Uranus, Jupiter
+
 $bumi = new Planet();
 $bumi->set_nama_planet("Bumi");
 $bumi->set_nama_satelit("Bulan");
+echo "Nama Planet: " . $bumi->get_nama_planet() . "\n" . "Nama Satelit: " . $bumi->get_nama_satelit();
+
+echo "\n";
+echo "\n";
 
 $uranus = new Planet();
 $uranus->set_nama_planet("Uranus");
 $uranus->set_nama_satelit("Titania");
+echo "\n". "Nama Planet: " . $uranus->get_nama_planet() . "\n" . "Nama Satelit: " . $uranus->get_nama_satelit();
+
+echo "\n";
+echo "\n";
 
 $jupiter = new Planet();
 $jupiter->set_nama_planet("Jupiter");
 $jupiter->set_nama_satelit("Ganymede");
+echo "\n"."Nama Planet: " . $jupiter->get_nama_planet() . "\n" . "Nama Satelit: " . $jupiter->get_nama_satelit();
 
+echo "\n";
+echo "\n";
 
 interface Mobil {
     public function set_merk($merk);
@@ -122,19 +133,31 @@ $ertiga = new Suzuki();
 $ertiga->set_merk("Ertiga");
 $ertiga->set_warna("Putih");
 $ertiga->set_jenis("MPV");
+echo "Merk mobil: " . $ertiga->get_merk() . "\n" . "Warna Mobil: " . $ertiga->get_warna(). "\n" . "Jenis: " . $ertiga->get_jenis();
 
+echo "\n";
+echo "\n";
 $brio = new Honda();
 $brio->set_merk("Brio");
 $brio->set_warna("Merah");
 $brio->set_jenis("Hatchback");
+echo "Merk mobil: " . $brio->get_merk() . "\n" . "Warna Mobil: " . $brio->get_warna(). "\n" . "Jenis: " . $brio->get_jenis();
 
 
 trait Error_Handling {
-    public function error($kode) {
-        switch ($kode) {
+    public function error($code) {
+        switch ($code) {
             case 404:
-                return "Bad Request";
+                return "\n"." Bad request";
         }
     }
 }
+
+class WebPage {
+    use Error_Handling;
+}
+
+$page = new WebPage();
+echo $page->error(404);
+
 ?>
